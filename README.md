@@ -18,6 +18,7 @@ amixer cset numid=3 1
 
 ## 5. edit /etc/pulse/system.pa
 - make sure the following lines are present
+
 ```
 load-module module-native-protocol-unix auth-anonymous=1
 load-module module-bluetooth-policy
@@ -26,6 +27,7 @@ load-module module-bluetooth-discover
 
 ## 5. edit /etc/pulse/daemon.conf
 - make sure the following lines are present
+
 ```
 allow-module-loading = yes
 system-instance = yes
@@ -71,6 +73,7 @@ WantedBy=multi-user.target
 
 ## 8. edit or create /etc/dbus-1/system.d/pulseaudio-bluetooth.conf
 - content should be:
+
 ```
 <busconfig>
   
