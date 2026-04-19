@@ -41,7 +41,6 @@ After=bluetooth.service
 Requires=bluetooth.service
 
 [Service]
-# Note that notify will only work if --daemonize=no
 Type=notify
 ExecStart=/usr/bin/pulseaudio --daemonize=no --exit-idle-time=-1 --disallow-exit=true --system
 Restart=always
