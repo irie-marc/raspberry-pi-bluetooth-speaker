@@ -31,10 +31,11 @@ allow-module-loading = yes
 system-instance = yes
 ```
 
+
 ## 6. edit or create /etc/systemd/system/pulseaudio.service
 - content should be:
+
 ```
-{% raw %}
 [Unit]
 Description=Sound Service
 After=bluetooth.service
@@ -47,14 +48,12 @@ Restart=always
 
 [Install]
 WantedBy=default.target
-{% endraw %}
 ```
 
 ## 7. edit or create /etc/systemd/system/bt-agent.service
 - content should be:
 
 ```
-{% raw %}
 [Unit]
 Description=Bluetooth Auth Agent
 After=bluetooth.service
@@ -67,7 +66,6 @@ RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
-{% endraw %}
 ```
 
 
