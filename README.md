@@ -51,6 +51,7 @@ WantedBy=default.target
 
 ## 7. edit or create /etc/systemd/system/bt-agent.service
 - content should be:
+
 ```
 [Unit]
 Description=Bluetooth Auth Agent
