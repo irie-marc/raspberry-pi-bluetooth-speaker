@@ -1,16 +1,25 @@
 # Configure raspberry-pi as bluetooth-speaker
 
 1. install packages
+```
 sudo apt update
 sudo apt install pulseaudio-module-bluetooth bluez bluez-tools
+```
 
-2. add user pulse to bluetooth group
+
+3. add user pulse to bluetooth group
+```
 sudo usermod -aG bluetooth pulse
+```
 
-3. Force analog audio output
+
+4. Force analog audio output
+```
 amixer cset numid=3 1
+```
 
-4. edit /etc/pulse/system.pa
+
+5. edit /etc/pulse/system.pa
 - make sure the following lines are present
 ```
 load-module module-native-protocol-unix auth-anonymous=1
@@ -43,6 +52,7 @@ Restart=always
 WantedBy=default.target
 ```
 
+
 7. edit or create /etc/systemd/system/bt-agent.service
 - content should be:
 ```
@@ -60,6 +70,7 @@ RestartSec=3
 WantedBy=multi-user.target
 ```
 
+
 8. edit or create /etc/dbus-1/system.d/pulseaudio-bluetooth.conf
 - content should be:
 ```
@@ -76,6 +87,7 @@ WantedBy=multi-user.target
  
 </busconfig> 
 ```
+
 
 9. enable and start services
 ```
