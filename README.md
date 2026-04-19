@@ -54,6 +54,7 @@ WantedBy=default.target
 - content should be:
 
 ```
+{% raw %}
 [Unit]
 Description=Bluetooth Auth Agent
 After=bluetooth.service
@@ -66,6 +67,7 @@ RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
+{% endraw %}
 ```
 
 
