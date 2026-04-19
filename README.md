@@ -1,11 +1,10 @@
 # Configure raspberry-pi as bluetooth-speaker
 
 ## 1. install packages
-{% raw %}
+```
 sudo apt update
 sudo apt install pulseaudio-module-bluetooth bluez bluez-tools
-{% endraw %}
-
+```
 
 ## 3. add user pulse to bluetooth group
 ```
@@ -35,6 +34,7 @@ system-instance = yes
 ## 6. edit or create /etc/systemd/system/pulseaudio.service
 - content should be:
 ```
+{% raw %}
 [Unit]
 Description=Sound Service
 After=bluetooth.service
@@ -47,6 +47,7 @@ Restart=always
 
 [Install]
 WantedBy=default.target
+{% endraw %}
 ```
 
 ## 7. edit or create /etc/systemd/system/bt-agent.service
